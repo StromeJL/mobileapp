@@ -246,8 +246,8 @@ namespace Toggl.Foundation.MvvmCross.ViewModels
             CurrentTimeEntryElapsedTime = timeService.CurrentDateTime - currentTimeEntryStart ?? TimeSpan.Zero;
 
             CurrentTimeEntryTask = timeEntry?.Task?.Name ?? "";
-            CurrentTimeEntryProject = timeEntry?.Project?.DisplayName();
-            CurrentTimeEntryProjectColor = timeEntry?.Project?.DisplayColor();
+            CurrentTimeEntryProject = timeEntry?.Project?.DisplayName() ?? "";
+            CurrentTimeEntryProjectColor = timeEntry?.Project?.DisplayColor() ?? "";
             CurrentTimeEntryClient = timeEntry?.Project?.Client?.Name ?? "";
 
             isStopButtonEnabled = timeEntry != null;

@@ -21,8 +21,8 @@ namespace Toggl.Foundation.Autocomplete.Suggestions
             Name = task.Name;
             ProjectId = task.ProjectId;
             WorkspaceId = task.WorkspaceId;
-            ProjectName = task.Project?.DisplayName();
-            ProjectColor = task.Project?.DisplayColor();
+            ProjectName = task.Project?.DisplayName() ?? "";
+            ProjectColor = task.Project?.DisplayColor() ?? "";
         }
 
         public override int GetHashCode()

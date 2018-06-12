@@ -16,7 +16,7 @@ namespace Toggl.Foundation.Extensions
                 return name;
             }
 
-            return project.Active ? name : $"{name} (archived)";
+            return project.Active ? name : $"{name} {Resources.ArchivedProjectDecorator}";
         }
 
         public static string DisplayColor(this IThreadSafeProject project)

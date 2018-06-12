@@ -43,6 +43,9 @@ namespace Toggl.Daneel.ViewControllers
 		UIKit.UIButton SignupButton { get; set; }
 
 		[Outlet]
+		UIKit.UIButton SignupShakeTriggerButton { get; set; }
+
+		[Outlet]
 		UIKit.NSLayoutConstraint TopConstraint { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -95,6 +98,11 @@ namespace Toggl.Daneel.ViewControllers
 			if (SignupButton != null) {
 				SignupButton.Dispose ();
 				SignupButton = null;
+			}
+
+			if (SignupShakeTriggerButton != null) {
+				SignupShakeTriggerButton.Dispose ();
+				SignupShakeTriggerButton = null;
 			}
 
 			if (TopConstraint != null) {

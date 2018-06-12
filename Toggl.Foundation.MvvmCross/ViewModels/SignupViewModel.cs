@@ -43,6 +43,8 @@ namespace Toggl.Foundation.MvvmCross.ViewModels
 
         public bool IsCountryErrorVisible { get; private set; } = false;
 
+        public bool IsCountryValid => countryId.HasValue;
+
         public Email Email { get; set; } = Email.Empty;
 
         public Password Password { get; set; } = Password.Empty;

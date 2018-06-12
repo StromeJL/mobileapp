@@ -16,6 +16,9 @@ namespace Toggl.Daneel.ViewControllers
 		Toggl.Daneel.Views.ActivityIndicatorView ActivityIndicator { get; set; }
 
 		[Outlet]
+		UIKit.UIImageView CountryDropDownCaretImageView { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView CountryNotSelectedImageView { get; set; }
 
 		[Outlet]
@@ -58,6 +61,11 @@ namespace Toggl.Daneel.ViewControllers
 			if (CountryNotSelectedImageView != null) {
 				CountryNotSelectedImageView.Dispose ();
 				CountryNotSelectedImageView = null;
+			}
+
+			if (CountryDropDownCaretImageView != null) {
+				CountryDropDownCaretImageView.Dispose ();
+				CountryDropDownCaretImageView = null;
 			}
 
 			if (EmailTextField != null) {

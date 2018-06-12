@@ -147,6 +147,8 @@ namespace Toggl.Daneel.ViewControllers
                 if (!ViewModel.IsCountryValid)
                 {
                     SelectCountryButton.Shake();
+                    CountryNotSelectedImageView.Shake();
+                    CountryDropDownCaretImageView.Shake();
                 }
             };
 

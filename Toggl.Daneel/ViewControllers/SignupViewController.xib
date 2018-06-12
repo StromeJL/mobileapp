@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController">
             <connections>
                 <outlet property="ActivityIndicator" destination="k7q-nl-nCH" id="K7q-pl-Qgd"/>
+                <outlet property="CountryDropDownCaretImageView" destination="vul-4E-5bP" id="Tw3-bX-LsP"/>
                 <outlet property="CountryNotSelectedImageView" destination="X67-rL-fUe" id="IjF-pt-t8k"/>
                 <outlet property="EmailTextField" destination="l9R-60-VBL" id="V8Z-gb-EPS"/>
                 <outlet property="ErrorLabel" destination="rbq-cx-c1j" id="eE6-Kv-7Me"/>

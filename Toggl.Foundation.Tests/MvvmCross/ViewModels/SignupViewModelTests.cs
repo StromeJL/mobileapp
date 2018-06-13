@@ -188,7 +188,7 @@ namespace Toggl.Foundation.Tests.MvvmCross.ViewModels
             }
 
             [Fact, LogIfTooSlow]
-            public async Task IsCountryValidShouldBeFaulseWhenNetworkFailed()
+            public async Task IsCountryValidShouldBeFalseWhenNetworkFailed()
             {
                 Api.Location.Get().Returns(Observable.Throw<ILocation>(new Exception()));
 
@@ -198,7 +198,7 @@ namespace Toggl.Foundation.Tests.MvvmCross.ViewModels
             }
 
             [Fact, LogIfTooSlow]
-            public async Task IsCountryValidShouldBeTrueWhenApiSucceed()
+            public async Task IsCountryValidShouldBeTrueWhenApiSucceeds()
             {
                 await ViewModel.Initialize();
 

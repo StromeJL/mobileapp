@@ -1,5 +1,4 @@
-﻿using System;
-using Toggl.Foundation.Models.Interfaces;
+﻿using Toggl.Foundation.Models.Interfaces;
 
 namespace Toggl.Foundation.Extensions
 {
@@ -11,21 +10,24 @@ namespace Toggl.Foundation.Extensions
         {
             var name = project.Name ?? "";
 
-            if (name == Resources.InaccessibleProject)
+            switch (project.SyncStatus)
             {
-                return name;
+                case PrimeRadiant.SyncStatus.RefetchingNeeded:
+                    return name;
+                default:
+                    return project.Active ? name : $"{name} {Resources.ArchivedProjectDecorator}";
             }
-
-            return project.Active ? name : $"{name} {Resources.ArchivedProjectDecorator}";
         }
 
         public static string DisplayColor(this IThreadSafeProject project)
         {
-            if (project.Name == Resources.InaccessibleProject)
+            switch (project.SyncStatus)
             {
-                return archivedColor;
+                case PrimeRadiant.SyncStatus.RefetchingNeeded:
+                    return archivedColor;
+                default:
+                    return project.Color ?? "";
             }
-            return project.Color ?? "";
         }
     }
 }

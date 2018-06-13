@@ -4,7 +4,7 @@ namespace Toggl.Foundation.Extensions
 {
     public static class ThreadSafeExtensions
     {
-        private const string archivedColor = "#cecece";
+        private const string inaccessibleProjectColor = "#cecece";
 
         public static string DisplayName(this IThreadSafeProject project)
         {
@@ -13,7 +13,7 @@ namespace Toggl.Foundation.Extensions
             switch (project.SyncStatus)
             {
                 case PrimeRadiant.SyncStatus.RefetchingNeeded:
-                    return name;
+                    return Resources.InaccessibleProject;
                 default:
                     return project.Active ? name : $"{name} {Resources.ArchivedProjectDecorator}";
             }
@@ -24,7 +24,7 @@ namespace Toggl.Foundation.Extensions
             switch (project.SyncStatus)
             {
                 case PrimeRadiant.SyncStatus.RefetchingNeeded:
-                    return archivedColor;
+                    return inaccessibleProjectColor;
                 default:
                     return project.Color ?? "";
             }
